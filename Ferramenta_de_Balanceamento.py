@@ -78,24 +78,24 @@ df0 = pd.read_sql(sql0,conn)
 
 if df0["TOT_AREA_PICKING"].values[0] == 1:
         # Formulário para atualizar os parâmetros do AFRAME
-        with open("parametros_aframe.json") as conexao_parametros_aframe:
-            parametros_aframe = json.load(conexao_parametros_aframe)
-        with st.sidebar.expander("PARÂMETROS DO AFRAME:"):
-            form = st.form("Parametros_Aframe")
-            col1, col2 = form.columns(2)
-        with col1:
-            txt_custo_funcionario = st.text_input("Custo Funcionário:",parametros_aframe['custo_funcionario'])
-            txt_produtividade_reposicao_canal = st.text_input("Prod. Rep. Canal:",parametros_aframe['produtividade_acessar_canal'])
-            txt_total_canais_maior = st.text_input("Total Canais Maior:",parametros_aframe['quantidade_canais'])
-            txt_altura_canal_maior = st.text_input("Alt Canal Maior:",parametros_aframe['tamanho_canal'])
-            txt_produtividade_backuploop_canal_maior = st.text_input("Prod. Canal Maior:",parametros_aframe['produtividade_backuploop'])
-        with col2:
-            txt_produtividade_manual = st.text_input("Prod. Manual:",parametros_aframe['produtividade_manual'])
-            txt_tempo_enchimento_canal = st.text_input("Ench. Canal:",parametros_aframe['tempo_encher_canal'])
-            txt_total_canais_menor = st.text_input("Canais Menor:",parametros_aframe['quantidade_canais_2'])
-            txt_altura_canal_menor = st.text_input("Alt Canal Menor:",parametros_aframe['tamanho_canal_2'])
-            txt_produtividade_backuploop_canal_menor = st.text_input("Prod. Canal Menor:",parametros_aframe['produtividade_backuploop_2'])
-            submit_button = form.form_submit_button("Submit")
+    with open("parametros_aframe.json") as conexao_parametros_aframe:
+        parametros_aframe = json.load(conexao_parametros_aframe)
+    with st.sidebar.expander("PARÂMETROS DO AFRAME:"):
+        form = st.form("Parametros_Aframe")
+        col1, col2 = form.columns(2)
+    with col1:
+        txt_custo_funcionario = st.text_input("Custo Funcionário:",parametros_aframe['custo_funcionario'])
+        txt_produtividade_reposicao_canal = st.text_input("Prod. Rep. Canal:",parametros_aframe['produtividade_acessar_canal'])
+        txt_total_canais_maior = st.text_input("Total Canais Maior:",parametros_aframe['quantidade_canais'])
+        txt_altura_canal_maior = st.text_input("Alt Canal Maior:",parametros_aframe['tamanho_canal'])
+        txt_produtividade_backuploop_canal_maior = st.text_input("Prod. Canal Maior:",parametros_aframe['produtividade_backuploop'])
+    with col2:
+        txt_produtividade_manual = st.text_input("Prod. Manual:",parametros_aframe['produtividade_manual'])
+        txt_tempo_enchimento_canal = st.text_input("Ench. Canal:",parametros_aframe['tempo_encher_canal'])
+        txt_total_canais_menor = st.text_input("Canais Menor:",parametros_aframe['quantidade_canais_2'])
+        txt_altura_canal_menor = st.text_input("Alt Canal Menor:",parametros_aframe['tamanho_canal_2'])
+        txt_produtividade_backuploop_canal_menor = st.text_input("Prod. Canal Menor:",parametros_aframe['produtividade_backuploop_2'])
+        submit_button = form.form_submit_button("Submit")
 
         if submit_button:
             # Executar as procedure para atualizar as bases
