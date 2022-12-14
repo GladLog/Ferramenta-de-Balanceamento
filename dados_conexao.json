@@ -1,0 +1,7 @@
+{
+    "server": "177.148.73.212",
+    "port": "1433",
+    "user": "SA",
+    "password": "123",
+    "database": "FERRAMENTA_BALANCEAMENTO_SQL"
+}
