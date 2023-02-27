@@ -3,7 +3,7 @@ import pandas as pd
 import Ferramenta_de_Balanceamento as fb
 
 # Executar a conexao com o servidor SQLSERVER
-conn = sql.retornar_conexao_sql(fb.text_ip,fb.text_port,fb.text_database,fb.text_user,fb.text_password)
+conn = sql.retornar_conexao_sql(fb.text_ip,fb.text_database,fb.text_user,fb.text_password)
 
 sql_BI1 = "SELECT * FROM BI_UNIDADES_DATA_AREA_PICKING"
 df_BI1 = pd.read_sql(sql_BI1,conn)

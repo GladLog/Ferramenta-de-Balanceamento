@@ -6,10 +6,16 @@ import plotly.graph_objects as go
 import plotly.express as px
 import sql
 import openpyxl
-import Ferramenta_de_Balanceamento as fb
+import json
+#import Ferramenta_de_Balanceamento as fb
+
+
+#ABRINDO O ARQUIVO JSON
+with open("dados_conexao.json") as conexao_json:
+    dados_conexao = json.load(conexao_json)
 
 # Executar a conexao com o servidor SQLSERVER
-conn = sql.retornar_conexao_sql(fb.text_ip,fb.text_port,fb.text_database,fb.text_user,fb.text_password)
+conn = sql.retornar_conexao_sql(dados_conexao['server'],dados_conexao['database'],dados_conexao['user'],dados_conexao['password'])
 
 #with st.sidebar:
 selected = option_menu(

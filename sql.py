@@ -5,9 +5,9 @@ import json
 with open("dados_conexao.json") as conexao_json:
     dados_conexao = json.load(conexao_json)
 
-def retornar_conexao_sql(server,port,database,user,password):
+def retornar_conexao_sql(server,database,user,password):
     
-    conexao = pymssql.connect(host=server,port=port,user=user,password=password,database=database)
+    conexao = pymssql.connect(host=server,user=user,password=password,database=database)
     return conexao
 
 
